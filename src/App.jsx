@@ -1,5 +1,5 @@
 
-import Book from './Components/Book'
+import Book from './Book'
 
 function App() {
 
