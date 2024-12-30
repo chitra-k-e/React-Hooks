@@ -1,8 +1,8 @@
-function Func(){
+function Func(props){
     return (
         <>
-            <h1>My first react project</h1>
+         <h1>My name is {props.name}</h1>
         </>
     )
 }
-export default Func;
+export default Func
