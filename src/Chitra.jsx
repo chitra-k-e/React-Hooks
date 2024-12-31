@@ -7,18 +7,33 @@ import Aboutus from "./Aboutus"
 import Contactus from "./Contactus"
 import {Link} from "react-router-dom"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './Chitra.css'
+// import './Chitra.css'
+import { createContext, useState } from "react"
 import logo from './assets/logo.jpeg'
+import Hook2 from "./Hook2"
+import Hook3 from "./Hook3"
+import Hen from "./Hen"
 // import Book from "./Book"
+export let nameContext = createContext();
 function Chitra(){
+    let [val,setVal]  = useState(false);
+    let handleChange = () =>{
+        setVal(!val);
+    }
     return(
         <>
            {/* <Book /> */}
            {/* <Func name="Chitra"/> */}
            {/* <Hook /> */}
            {/* <List /> */}
+           {/* <Hook3 /> */}
+           <button onClick={handleChange}>Change</button>
+           <nameContext.Provider value={val}>
+            <Hen />
+           </nameContext.Provider>
+           
            {/* <Add num={10}/> */}
-           <Router>
+           {/* <Router>
            <header>
                 <nav className="navbar">
                     <div className="logo-container">
@@ -50,7 +65,7 @@ function Chitra(){
             </footer>
                 
           
-           </Router>
+           </Router> */}
         </>
     )
 }
